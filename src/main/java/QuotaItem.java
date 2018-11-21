@@ -23,6 +23,16 @@ public class QuotaItem implements Comparable<QuotaItem> {
         this.quota = quota;
     }
 
+    @Override
+    public int hashCode() {
+        return id.hashCode()+groupId.hashCode()+quota.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
     public String getGroupId() {
 
         return groupId;
