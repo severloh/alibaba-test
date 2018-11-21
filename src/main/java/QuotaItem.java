@@ -25,7 +25,7 @@ public class QuotaItem implements Comparable<QuotaItem> {
 
     @Override
     public int hashCode() {
-        return id.hashCode()+groupId.hashCode()+quota.hashCode();
+        return id.hashCode() + groupId.hashCode() + quota.hashCode();
     }
 
     @Override
@@ -69,7 +69,7 @@ public class QuotaItem implements Comparable<QuotaItem> {
         if (this.quota > quotaItem.getQuota()) {
             return 1;
         } else if (this.quota == quotaItem.getQuota()) {
-            return 0;
+            return this.id.compareTo(quotaItem.getId());
         } else {
             return -1;
         }
